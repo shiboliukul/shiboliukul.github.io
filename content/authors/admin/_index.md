@@ -7,7 +7,6 @@ superuser: true
 
 # Role/position/tagline
 role: PhD Student at Dartmouth College
-Shibo.Liu.TH AT dartmouth.edu
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -15,7 +14,7 @@ organizations:
     url: https://home.dartmouth.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include AI-Powered, Stretchable Electronics and Customized Biomedical Device.
+bio: My research interests include AI-Powered, Stretchable Electronics and Customized Biomedical Device. My email address is Shibo.Liu.TH AT dartmouth.edu
 
 # Interests to show in About widget
 interests:
