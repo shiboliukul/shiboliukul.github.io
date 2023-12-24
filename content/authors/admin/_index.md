@@ -40,12 +40,6 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
-    label: Follow me on Twitter
-    display:
-      header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
@@ -66,5 +60,5 @@ social:
 highlight_name: true
 ---
 
-Shibo Liu is a PhD student at the Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered Electronics, Embedded System Design and Customized Biomedical Device.
+Shibo Liu is a PhD student at the Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered Electronics, Embedded System Design and Customized Biomedical Device. Note: This website is still in progress.
 {style="text-align: justify;"}
