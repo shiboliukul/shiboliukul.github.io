@@ -11,16 +11,16 @@ role: PhD Student at Dartmouth College
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Dartmouth College
-    url: https://www.stanford.edu/
+    url: https://home.dartmouth.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include AI-Powered Electronics, Embedded System Design and Customized Biomedical Device.
 
 # Interests to show in About widget
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - AI-Powered Electronics
+  - Embedded System Design
+  - Customized Biomedical Device
 
 # Education to show in About widget
 education:
@@ -109,5 +109,5 @@ social:
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Shibo Liu is a PhD student at the Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered Electronics, Embedded System Design and Customized Biomedical Device.
 {style="text-align: justify;"}
