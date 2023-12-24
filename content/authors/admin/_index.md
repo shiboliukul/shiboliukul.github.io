@@ -26,13 +26,13 @@ interests:
 education:
   courses:
     - course: PhD in Engineering Sciences
-      institution: Dartmouth College
+      institution: Dartmouth College, USA
       year: 2028(Expected)
     - course: MSc in Engineering Sciences
-      institution: Dartmouth College
+      institution: Dartmouth College, USA
       year: 2024(Expected)
     - course: BEng in Electronics Engineering, Cum Laude
-      institution: KU Leuven
+      institution: KU Leuven, Belgium
       year: 2023
 
 # Social/Academic Networking
