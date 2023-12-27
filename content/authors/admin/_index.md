@@ -6,7 +6,7 @@ title: Shibo Liu
 superuser: true
 
 # Role/position/tagline
-role: PhD Student at Dartmouth College
+role: PhD Student at Thayer School of Engineering, Dartmouth College
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,12 +14,12 @@ organizations:
     url: https://engineering.dartmouth.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Shibo Liu, PhD candidate at Thayer School of Engineering, Dartmouth. Email address is Shibo.Liu.TH AT dartmouth.edu
+bio: Shibo Liu, PhD candidate at Thayer School of Engineering, Dartmouth College. Email address Shibo.Liu.TH AT dartmouth.edu
 
 # Interests to show in About widget
 interests:
   - AI-Powered Electronics
-  - Flexible electronics
+  - Electrochemical Biosensor
   - Customized Biomedical Device
 
 # Education to show in About widget
@@ -60,5 +60,5 @@ social:
 highlight_name: true
 ---
 
-Shibo Liu is a PhD student at Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered, Flexible Electronics and Customized Biomedical Device. Note: This website is still under construction.
+Shibo Liu is a PhD student at Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered Electronics, Electrochemical Biosensor and Customized Biomedical Device. Note: This website is still under construction.
 {style="text-align: justify;"}
