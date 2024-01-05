@@ -54,5 +54,5 @@ social:
 highlight_name: true
 ---
 
-Shibo Liu is a PhD student at Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. His research interests include AI-Powered Electronics, Electrochemical Biosensor and Customized Biomedical Device. Note: This website is still under construction.
+I am a PhD student at Dartmouth Bio-Integrated Microsystems Group advised by Prof. Wei Ouyang. My research interests include AI-Powered Electronics, Electrochemical Biosensor and Customized Biomedical Device. While I do not possess a background in biomedical engineering, I am committed to leveraging my expertise in electronics engineering and computer science for the advancement of biomedical applications. Note: This website is still under construction.
 {style="text-align: justify;"}
