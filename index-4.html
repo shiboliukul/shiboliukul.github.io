@@ -1,0 +1,224 @@
+<!-- Single-page personal site for Shibo -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shibo Liu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f262d;
+    --body:#3a434b;
+    --muted:#6a747c;
+    --link:#2f5f86;      /* muted Nature-style blue */
+    --rule:#e3e7ea;
+    --band:#e4ecf3;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;display:flex;flex-direction:column;background:#fff;color:var(--body);
+       font:400 17px/1.65 "Lato",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--link)}
+  a:hover{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+  strong{color:var(--ink);font-weight:700}
+
+  .wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 32px}
+
+  /* Header: name + contact icons */
+  header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0}
+  .name{margin:0;font:700 22px/1.2 "Lato",sans-serif;color:var(--ink);letter-spacing:-.01em}
+  .icons{display:flex;gap:14px;margin:0;padding:0;list-style:none}
+  .icons a{display:flex;width:32px;height:32px;align-items:center;justify-content:center;color:var(--ink)}
+  .icons a:hover{color:var(--link)}
+  .icons svg{width:22px;height:22px}
+
+  /* Carousel */
+  .carousel{position:relative;padding:0 56px}
+  .viewport{position:relative;max-width:980px;margin:0 auto;aspect-ratio:10/7;background:#f4f6f7;
+            overflow:hidden;touch-action:pan-y}
+  .slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+  .slide.is-active{opacity:1;visibility:visible}
+  .slide img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+  .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+               color:var(--muted);font-size:15px;z-index:-1}
+  .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;background:none;
+       color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%}
+  .nav:hover{background:#f1f4f6}
+  .nav svg{width:20px;height:20px}
+  .nav.prev{left:0}
+  .nav.next{right:0}
+  .pause{position:absolute;top:10px;right:6px;width:32px;height:32px;border:0;background:none;
+         color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%}
+  .pause:hover{background:#f1f4f6}
+  .pause svg{width:16px;height:16px}
+
+  .caption{margin:12px 0 0;font-size:15px;line-height:1.5;color:var(--muted);min-height:2.6em}
+  .caption .count{font-variant-numeric:tabular-nums;margin-right:10px}
+  .caption .cap-title{color:var(--ink)}
+
+  /* Content */
+  main{flex:1;padding-bottom:88px}
+  .content{margin-top:28px}
+  h2{margin:0 0 12px;font:700 22px/1.3 "Lato",sans-serif;color:var(--ink)}
+  h3{margin:0 0 12px;font:700 20px/1.3 "Lato",sans-serif;color:var(--ink)}
+  p{margin:0 0 16px}
+  section + section{margin-top:36px;padding-top:20px;border-top:1px solid var(--rule)}
+
+  .edu{list-style:none;margin:0;padding:0}
+  .edu li{margin:0 0 14px}
+  .edu .when{font-weight:700;color:var(--ink);margin-right:6px}
+
+  .pubs{list-style:none;margin:0;padding:0}
+  .pubs li{margin:0 0 16px}
+  .pubs em{font-style:italic}
+  .pubs sup, .legend sup{font-size:.72em;line-height:0;margin-left:1px}
+  .featured{display:block;font-size:15px;color:var(--muted)}
+  .legend{font-size:14px;color:var(--muted);margin:4px 0 0}
+
+  footer{background:var(--band);text-align:center;padding:18px 0;font-size:14px;color:var(--ink)}
+
+  @media (max-width:760px){
+    .wrap{padding:0 18px}
+    header{flex-direction:column;align-items:flex-start;gap:8px}
+    .carousel{padding:0}
+    .nav{background:rgba(255,255,255,.85)}
+    .nav.prev{left:6px}
+    .nav.next{right:6px}
+    .pause{background:rgba(255,255,255,.85);right:8px}
+    body{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){ .slide{transition:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 class="name">Shibo Liu</h1>
+    <ul class="icons">
+      <li><a href="mailto:shibo.liu.th@dartmouth.edu" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></a></li>
+      <li><a href="https://scholar.google.com/citations?hl=en&user=rhE8fFEAAAAJ&view_op=list_works&sortby=pubdate" aria-label="Google Scholar" title="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 9.5 12 4l10 5.5L12 15 2 9.5Z"/><path d="M6 11.7V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.3"/></svg></a></li>
+      <li><a href="https://orcid.org/0009-0004-9282-3043" aria-label="ORCID" title="ORCID">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 8.5v7M12 8.5v7h1.5a3.5 3.5 0 0 0 0-7H12Z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/shibo-liu-kul-dartmouth/" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M8 10.5V17M8 7.3v.1M12 17v-6.5M12 13.5c0-1.7 1-3 2.5-3s2.5 1 2.5 2.8V17"/></svg></a></li>
+    </ul>
+  </header>
+</div>
+
+<main class="wrap">
+  <!-- Research highlights carousel -->
+  <div class="carousel" aria-roledescription="carousel" aria-label="Research highlights">
+    <div class="viewport" id="viewport">
+      <!-- Each slide: image file + data-caption (shown under the image) + data-link -->
+      <figure class="slide" data-caption="Bioresorbable microneedle sensor array for perioperative organ monitoring." data-link="https://www.nature.com/articles/s41551-025-01609-z">
+        <span class="placeholder">highlight1.jpg</span>
+        <img src="highlight1.jpg" alt="Bioresorbable microneedle sensor array" onerror="this.remove()">
+      </figure>
+      <figure class="slide" data-caption="Untethered soft robot with vertically integrated power and sensing." data-link="https://www.science.org/doi/10.1126/sciadv.adv9572">
+        <span class="placeholder">highlight2.jpg</span>
+        <img src="highlight2.jpg" alt="Manta ray-inspired untethered soft robot" onerror="this.remove()">
+      </figure>
+    </div>
+
+    <button class="nav prev" id="prev" aria-label="Previous image">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4 6.5 10l6 6"/></svg>
+    </button>
+    <button class="nav next" id="next" aria-label="Next image">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4l6 6-6 6"/></svg>
+    </button>
+    <button class="pause" id="pause" aria-label="Pause slideshow"></button>
+  </div>
+  <p class="caption" id="caption" aria-live="polite"></p>
+
+  <div class="content">
+    <section>
+      <h2>About me</h2>
+      <p>I'm a 4th-year PhD candidate at the <a href="https://engineering.dartmouth.edu/">Thayer School of Engineering</a> at Dartmouth College, working in <a href="https://ouyanggroup.com/">Prof. Wei Ouyang's lab</a>. My research focuses on <strong>implantable biosensors and bioelectronic devices</strong> that monitor molecules inside the body continuously and over long periods of time.</p>
+    </section>
+
+    <section>
+      <h3>Education</h3>
+      <ul class="edu">
+        <li><span class="when">2023 - present.</span> Dartmouth College, Hanover, NH, USA. Ph.D. in Engineering Sciences.</li>
+        <li><span class="when">2019 - 2023.</span> KU Leuven, Leuven, Belgium. B.Sc. in Electronics Engineering, cum laude.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Publications</h3>
+      <ul class="pubs">
+        <li><strong>S. Liu<sup>†</sup></strong>, X. Li<sup>†</sup>, W. Ouyang<sup>*</sup>. Continuous molecular monitoring using electrochemical aptamer-based sensors: remaining challenges for long-term in vivo deployment. <em>Advanced Science</em>, 2026. <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.77896">Paper</a></li>
+        <li>X. Li, <strong>S. Liu</strong>, J. Mo, C. Yang, G. Li, M. Zhou, J. Ryu, M. Morales, H. Fang, W. Ouyang<sup>*</sup>. A programmable bioresorbable electrochemical microneedle sensor array for perioperative monitoring of organ health. <em>Nature Biomedical Engineering</em>, 2026. <a href="https://www.nature.com/articles/s41551-025-01609-z">Paper</a>
+          <span class="featured">Highlighted in <a href="https://www.nature.com/articles/s44460-026-00049-9"><em>Nature Sensors</em></a> and <a href="https://www.nature.com/articles/s44222-026-00432-8"><em>Nature Reviews Bioengineering</em></a>.</span></li>
+        <li>X. Li<sup>†</sup>, X. Xiao<sup>†</sup>, X. Xiao<sup>†</sup>, Z. Liu, J. Gong, Z. Lin, B. Xue, <strong>S. Liu</strong>, X. Wu, W. Zhang, D. Wang, R. Zhao, Z. Wang, X. Zhong, Y. Lin, P. Chia, X. He, J. S. Ho, G. W. Ho, W. Ouyang, W. Ding<sup>*</sup>, G. Zhou<sup>*</sup>, C. Laschi, C. Wu<sup>*</sup>. Magnetic field–enhanced vertical integration enables embodied intelligence in untethered soft robots. <em>Science Advances</em>, 2025. <a href="https://www.science.org/doi/10.1126/sciadv.adv9572">Paper</a></li>
+      </ul>
+      <p class="legend"><sup>†</sup> Equal contribution &nbsp;&nbsp; <sup>*</sup> Corresponding author</p>
+    </section>
+  </div>
+</main>
+
+<footer>© 2026 Shibo Liu</footer>
+
+<script>
+(function(){
+  const INTERVAL = 6000;   // milliseconds per slide
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const caption = document.getElementById('caption');
+  const pauseBtn = document.getElementById('pause');
+  const viewport = document.getElementById('viewport');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0, timer = null, playing = !reduce;
+
+  const ICON_PAUSE = '<svg viewBox="0 0 16 16" fill="currentColor"><rect x="3.5" y="2.5" width="3" height="11"/><rect x="9.5" y="2.5" width="3" height="11"/></svg>';
+  const ICON_PLAY  = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg>';
+
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => {
+      s.classList.toggle('is-active', k === i);
+      s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+    });
+    const s = slides[i];
+    const link = s.dataset.link ? ' <a href="' + s.dataset.link + '">Paper</a>' : '';
+    caption.innerHTML = '<span class="count">' + (i + 1) + ' / ' + slides.length + '</span>' +
+                        '<span class="cap-title">' + (s.dataset.caption || '') + '</span>' + link;
+  }
+  function start(){ stop(); if (playing) timer = setInterval(() => show(i + 1), INTERVAL); }
+  function stop(){ clearInterval(timer); }
+  function setPlaying(p){
+    playing = p;
+    pauseBtn.innerHTML = p ? ICON_PAUSE : ICON_PLAY;
+    pauseBtn.setAttribute('aria-label', p ? 'Pause slideshow' : 'Play slideshow');
+    start();
+  }
+
+  document.getElementById('prev').addEventListener('click', () => { show(i - 1); start(); });
+  document.getElementById('next').addEventListener('click', () => { show(i + 1); start(); });
+  pauseBtn.addEventListener('click', () => setPlaying(!playing));
+
+  // Swipe on touch screens
+  let x0 = null;
+  viewport.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive:true});
+  viewport.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) { show(i + (dx < 0 ? 1 : -1)); start(); }
+    x0 = null;
+  });
+
+  // Arrow keys when the carousel has focus
+  document.querySelector('.carousel').addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { show(i + 1); start(); }
+    if (e.key === 'ArrowLeft')  { show(i - 1); start(); }
+  });
+
+  show(0);
+  setPlaying(playing);
+})();
+</script>
+</body>
+</html>
